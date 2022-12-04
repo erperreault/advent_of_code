@@ -9,7 +9,7 @@ end
 def overlaps_p1? (pair)
   p1 = *(pair[0][0]..pair[0][1])
   p2 = *(pair[1][0]..pair[1][1])
-  return (p2-p1).empty? || (p1-p2).empty?
+  return ((p2-p1).empty? || (p1-p2).empty?) ? 1 : 0
 end
   
 # input = File.open("input")
@@ -19,7 +19,6 @@ end
 #   .map {|p| split_pairs p}
 #   .map {|p| make_ints p}
 #   .map {|p| overlaps_p1? p}
-#   .map {|p| p ? 1 : 0}
 #   .sum
 
 def overlaps_p2? (pair)
